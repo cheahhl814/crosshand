@@ -143,7 +143,9 @@ handovers): freshness verification with the remote-vs-local origin probe, the
 changed/missing trust boundary, redaction handling, and the archive
 compaction pattern. Authored with skill-forge conventions (structural lint
 gate PASS 15/15, workflow-skill profile); behavioral battle-test — one real
-exchange round trip — is pending and gates the version bump to 0.3.0.
+exchange round trip on a three-repo fixture (bare origin + two clones,
+2026-11-12) — passed, gating the version bump to 0.3.0; see
+`battle-test-report.md` in the working copy (gitignored, not shipped).
 v0.1.0 was staged as `harness-handoff` with a `handoffs/outbox/<sender>/`
 layout; renamed and flattened before any real exchange (name collision with
 the sibling `handoff` skill; the outbox layer is redundant in a shared
