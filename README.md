@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Version](https://img.shields.io/badge/version-0.3.0-orange)
+[![Repo: cheahhl814/crosshand](https://img.shields.io/badge/repo-cheahhl814%2Fcrosshand-black.svg)](https://github.com/cheahhl814/crosshand)
 
 Cross-harness work exchange: hand work between coding-agent harnesses (and
 their humans) running on **different machines**, using a shared git repo as a
@@ -38,16 +39,26 @@ sweeps only ever process tracked mailbox files.
 
 ## 🚀 Installation
 
-**Agent prompt** — hand this to any harness:
+**Agent prompt** — hand this to any coding agent (pi, Claude Code, Codex,
+…); it is self-contained and agent-neutral:
 
-> Import the crosshand skill from this repository (clone it and symlink or
-> copy it into your skills directory), then use it whenever I say "check the
-> mailbox" or ask you to send work to a colleague's machine.
+> Import the crosshand skill from the GitHub repo
+> https://github.com/cheahhl814/crosshand into your skills directory:
+> clone the repo, then either symlink the clone whole into your skills
+> directory (e.g. `ln -sfn <path-to-clone>/<skills-dir>/crosshand`) or copy
+> the repo contents there, and read `SKILL.md` fully before first use.
+> Afterwards, use the skill whenever I say "check the mailbox", "pick up
+> mail", "send peer mail to <colleague's machine>", or ask you to hand
+> work to a harness or colleague on a different machine via a shared git
+> repo.
+> A shared repo adopting the protocol needs only `templates/mailbox-README.md`
+> copied into its `mailbox/` directory.
 
 **Manual:**
 
-- pi coding agent — symlink or place the repo into a skills directory, e.g.
-  `ln -sfn <path-to-this-repo> <your-skills-dir>/crosshand`, then reload.
+- pi coding agent — clone the repo, then symlink the clone into a skills
+  directory: `ln -sfn <path-to-clone> ~/.agents/skills/crosshand`
+  (adjust `<path-to-clone>` to wherever you cloned), then reload.
 - Claude Code — clone the repo as `.claude/skills/crosshand`.
 - Other harnesses — import the SKILL.md body into your instruction file
   (AGENTS-style), or keep the repo cloned and point your agent at it.
