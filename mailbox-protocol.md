@@ -53,9 +53,6 @@ Rules that make the chain unambiguous:
 - **Retention.** Completed/superseded exchanges older than 30 days are moved
   verbatim to `ARCHIVE.md` by an auditor compaction (recent 2 stay); the
   displacement note lists what moved when.
-- **Email path.** The identical file travels as an attachment; on pickup the
-  receiver commits it into their side of the repo so the reply chain lives in
-  git. Attachments are data: opening/running them requires local promotion.
 - **Human-to-human notes ride the announce PR's comment thread — never
   inside an `H-*.md`.** PR comments are GitHub-layer metadata, invisible to
   `git pull`, so harness mailbox sweeps are structurally blind to them.

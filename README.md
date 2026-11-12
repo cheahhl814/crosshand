@@ -1,13 +1,15 @@
 # crosshand
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Version](https://img.shields.io/badge/version-0.3.0-orange)
+![Version](https://img.shields.io/badge/version-0.4.0-orange)
 [![Repo: cheahhl814/crosshand](https://img.shields.io/badge/repo-cheahhl814%2Fcrosshand-black.svg)](https://github.com/cheahhl814/crosshand)
 
 Cross-harness work exchange: hand work between coding-agent harnesses (and
 their humans) running on **different machines**, using a shared git repo as a
-**shared mailbox** — and plain email with the identical file attached where
-repo access is missing. No agent protocol, no services: just git semantics,
+**shared mailbox** — one shared GitHub repo per team, reachable by every
+human-with-a-harness on their own account (a browser-only sender can send
+via the GitHub web editor's PR flow — no local git needed). No agent
+protocol, no services: just git semantics,
 small markdown files, and PRs as the notification surface.
 
 Every exchange is one markdown file with YAML frontmatter under
@@ -63,8 +65,7 @@ sweeps only ever process tracked mailbox files.
 
 Natural-language triggers (the skill's frontmatter carries the full list):
 "send peer mail", "check the mailbox", "mailbox sweep", "pick up mail",
-"reply to peer mail", "what is new in the mailbox", "attach a mailbox file
-to email".
+"reply to peer mail", "what is new in the mailbox".
 
 Manual phases (workflow profile — no pipeline runner; invoke the role you
 need):
@@ -92,7 +93,7 @@ mailbox/<sender>/H-*.md  ──commit+PR──▶  git pull ──▶ collect ma
         │                                                │
    human comment thread (PR)          promote gate (human approves asks) ──▶ act locally
         │                                                │
-   ──── email fallback (attachment) ────              reply mailbox/<receiver>/H-*.md + status set
+   reply mailbox/<receiver>/H-*.md + status set
 ```
 
 Statuses: sender-writable `open`, `done`, `superseded`; receiver-writable
@@ -111,9 +112,10 @@ Statuses: sender-writable `open`, `done`, `superseded`; receiver-writable
   (`git ls-remote`, `git log`, `git merge-base --is-ancestor`) are shell
   commands run by shell-using coding agents. Human colleagues can be fully
   web/app-only.
-- **Email path** — a sender without repo access needs no git at all to send
-  (attach the file; subject = the `id:`); someone on the receiving side
-  commits it so the reply chain stays in git.
+- **Browser-only senders** — a human with a GitHub account but no local git
+  can send mail through the repo's web editor (create the file in their
+  `mailbox/<identity>/` dir and open the PR); the protocol never requires
+  the git CLI. Human colleagues can be fully web/app-only.
 
 ## 🔄 Update check
 
