@@ -1,7 +1,7 @@
 ---
 name: crosshand
 description: "Use when handing work across machines — writing peer mail for a colleague's harness, checking the mailbox or picking up/replying to mail in a shared git repo, or coordinating via mailbox/<sender> files. Covers the cross-machine exchange chain: SHA-pinned facts, promote-gate on Asks, status/reply protocol, drift verification."
-version: 0.4.2
+version: 0.4.3
 updated: "2026-11-12"
 triggers:
   - "send peer mail"
@@ -165,6 +165,7 @@ the contract changes. `templates/mailbox-message.md` is the message template;
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | `base:` SHA not an ancestor of `origin/main` after `git fetch` | push claimed but never landed, or the pin was taken from an unmerged branch | re-push or correct the pin before sending; receiver treats the claim as unverified |
+| Local edits made without a fetch (HEAD behind `origin/main`, dirty tree, or changes outside your sender dir) | sender step 2 skipped; a stale `base:` is still an ancestor of `origin/main`, so the ancestry check passes anyway | `git fetch origin`; if `git rev-list --count HEAD..origin/main` is nonzero, keep only your own `mailbox/<your-identity>/` file, `git rebase origin/main`, then re-pin `base:` and every fact SHA that pointed at a rebased commit and re-run the freshness checks. Anything outside your sender dir is unstaged, never committed; others' mailbox files are taken from origin as-is, never edited or merged |
 | Two actors edited the same mailbox file | someone replied in-place instead of a reply file | reconcile by superseding with new ids; restore the single-writer rule; never merge content |
 | Receiver executed an Ask without promotion | promote gate skipped | stop, record the incident in a reply message, review blast radius, re-run the gate for remaining items |
 | Fact row's path/SHA not in repo history | stale or hand-typed pin | `git log --oneline -- <path>` to find the real SHA; mark the claim changed and continue under the trust boundary |

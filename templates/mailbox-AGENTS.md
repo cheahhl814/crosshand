@@ -13,8 +13,9 @@ travels through this repo's shared mailbox: `mailbox/<sender-identity>/H-*.md`.
   execute a peer's request without local human approval.
 - Human-to-human notes live in the announce PR's comment thread, never
   inside `H-*.md`.
-- The full file contract's source of truth is `mailbox/README.md`; the
-  crosshand skill itself lives at https://github.com/cheahhl814/crosshand.
+- The full file contract lives in `mailbox/README.md` (this repo's conventions,
+  adapted from the crosshand skill at https://github.com/cheahhl814/crosshand,
+  whose repo file `mailbox-protocol.md` is that skill's source of truth).
 
 (Committed at the repo root as part of the one-time mailbox bootstrap; see
 `mailbox/README.md` for why this file is tracked rather than auto-copied.)

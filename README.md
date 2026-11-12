@@ -1,7 +1,7 @@
 # crosshand
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Version](https://img.shields.io/badge/version-0.4.2-orange)
+![Version](https://img.shields.io/badge/version-0.4.3-orange)
 [![Repo: cheahhl814/crosshand](https://img.shields.io/badge/repo-cheahhl814%2Fcrosshand-black.svg)](https://github.com/cheahhl814/crosshand)
 
 Cross-harness work exchange: hand work between coding-agent harnesses (and
@@ -131,6 +131,7 @@ in your checkout and compare to the deployed copy.
 | `mailbox-protocol.md` | single source of truth for the file contract (layout, ids, frontmatter, status, retention) |
 | `templates/mailbox-message.md` | the message template (frontmatter + body sections) |
 | `templates/mailbox-README.md` | drop-in conventions README for a repo's `mailbox/` directory |
+| `templates/mailbox-AGENTS.md` | root agent file to commit in the same bootstrap commit (tells every pulled clone the mailbox is part of the workflow) |
 | `bin/`, `docs-corpus/` | absent by design (workflow profile — no runner, no pixi, no tool docs to capture) |
 
 ## 🔒 Hard guarantees
