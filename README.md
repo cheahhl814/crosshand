@@ -1,7 +1,7 @@
 # crosshand
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Version](https://img.shields.io/badge/version-0.4.0-orange)
+![Version](https://img.shields.io/badge/version-0.4.1-orange)
 [![Repo: cheahhl814/crosshand](https://img.shields.io/badge/repo-cheahhl814%2Fcrosshand-black.svg)](https://github.com/cheahhl814/crosshand)
 
 Cross-harness work exchange: hand work between coding-agent harnesses (and
@@ -47,7 +47,7 @@ sweeps only ever process tracked mailbox files.
 > Import the crosshand skill from the GitHub repo
 > https://github.com/cheahhl814/crosshand into your skills directory:
 > clone the repo, then either symlink the clone whole into your skills
-> directory (e.g. `ln -sfn <path-to-clone>/<skills-dir>/crosshand`) or copy
+> directory (e.g. `ln -sfn <path-to-clone> <your-skills-dir>/crosshand`) or copy
 > the repo contents there, and read `SKILL.md` fully before first use.
 
 **Manual:**

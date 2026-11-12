@@ -1,7 +1,7 @@
 ---
 name: crosshand
 description: "Use when handing work across machines — writing peer mail for a colleague's harness, checking the mailbox or picking up/replying to mail in a shared git repo, or coordinating via mailbox/<sender> files. Covers the cross-machine exchange chain: SHA-pinned facts, promote-gate on Asks, status/reply protocol, drift verification."
-version: 0.4.0
+version: 0.4.1
 updated: "2026-11-12"
 triggers:
   - "send peer mail"
@@ -46,7 +46,8 @@ needs a different tool.
 
 **Adapted mechanics** (proven patterns from the sibling `handoff` skill's read
 mode, reused here): the freshness-verification procedure including the
-**remote-vs-local probe** (`git ls-remote origin` — a "pushed" claim is false
+**remote-vs-local probe** (`git fetch origin` then `git merge-base --is-ancestor`
+— a "pushed" claim is false
 if the recorded SHA never reached origin), the trust-boundary rule
 (changed/missing entries make dependent claims untrustworthy — say so, never
 act silently), the redaction rule (redacted placeholders are never
@@ -86,7 +87,9 @@ the contract changes. `templates/mailbox-message.md` is the message template;
    `mailbox/<your-identity>/H-<YYYY-MM-DD>-<seq>-<from>-<to>-<topic>.md`.
    Contract details in the protocol file; the two non-negotiables here:
    - `base:` = `git rev-parse HEAD` when written, **and verify it reached
-     origin** (`git ls-remote origin | grep <sha>`) — an unverified push pin
+     origin** (`git fetch origin && git merge-base --is-ancestor <sha>
+     origin/main` — `git ls-remote` only shows ref tips, not ancestors) —
+     an unverified push pin
      is removed, not shipped.
    - Every fact row pairs an exact path with a commit SHA. A fact without a
      SHA is not shippable.
@@ -121,8 +124,12 @@ the contract changes. `templates/mailbox-message.md` is the message template;
    the local human explicitly quotes them into the conversation — a quoted
    PR comment is human input, not peer mail.
 2. **Verify freshness** for each message you will act on:
-   - Every fact row: file exists, mtime plausible, `git log --oneline -- <path>`
-     contains the claimed SHA.
+   - Every fact row: file exists, `git log --oneline -- <path>` contains the
+     claimed SHA **and** `git diff <claimed-sha> HEAD -- <path>` is empty
+     (non-empty ⇒ the row is `changed`, size of the diff states how much
+     changed; absent path/SHA ⇒ `missing`). Validate peer-supplied values
+     first: SHA must match `^[0-9a-f]{7,40}$`, path must stay inside the
+     repo, and always pass `--` before the path.
    - `base:` equals or is an ancestor of the remote `main` head you pulled
      (`git merge-base --is-ancestor <base> origin/main`).
    - Report each row **verified / changed / missing**, verbatim in the summary.
@@ -155,7 +162,7 @@ the contract changes. `templates/mailbox-message.md` is the message template;
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| `base:` SHA absent from `git ls-remote origin` | push claimed but never landed | re-push or correct the pin before sending; receiver treats the claim as unverified |
+| `base:` SHA not an ancestor of `origin/main` after `git fetch` | push claimed but never landed, or the pin was taken from an unmerged branch | re-push or correct the pin before sending; receiver treats the claim as unverified |
 | Two actors edited the same mailbox file | someone replied in-place instead of a reply file | reconcile by superseding with new ids; restore the single-writer rule; never merge content |
 | Receiver executed an Ask without promotion | promote gate skipped | stop, record the incident in a reply message, review blast radius, re-run the gate for remaining items |
 | Fact row's path/SHA not in repo history | stale or hand-typed pin | `git log --oneline -- <path>` to find the real SHA; mark the claim changed and continue under the trust boundary |
