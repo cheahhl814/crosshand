@@ -35,4 +35,7 @@ side — a browser-only sender sends via the GitHub web editor's PR flow.
     mirrored as email, per each user's settings). Only what the local human
     explicitly quotes out of a PR thread is ever human input to a harness.
 
-Message template: `templates/mailbox-message.md` in the crosshand skill.
+Message template: `templates/mailbox-message.md` in the crosshand skill. In
+the same bootstrap commit, copy `templates/mailbox-AGENTS.md` to the project
+root so every harness that pulls the repo knows the mailbox is part of the
+workflow (tracked and PR-reviewed — never auto-copied at runtime).

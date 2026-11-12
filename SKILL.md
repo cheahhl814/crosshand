@@ -1,7 +1,7 @@
 ---
 name: crosshand
 description: "Use when handing work across machines — writing peer mail for a colleague's harness, checking the mailbox or picking up/replying to mail in a shared git repo, or coordinating via mailbox/<sender> files. Covers the cross-machine exchange chain: SHA-pinned facts, promote-gate on Asks, status/reply protocol, drift verification."
-version: 0.4.1
+version: 0.4.2
 updated: "2026-11-12"
 triggers:
   - "send peer mail"
@@ -77,7 +77,9 @@ the contract changes. `templates/mailbox-message.md` is the message template;
 ## Sender procedure
 
 1. **Preconditions.** Shared repo reachable; `mailbox/` exists (else copy
-   `templates/mailbox-README.md` there first and commit it); `main` is
+   `templates/mailbox-README.md` there first and commit it, plus
+   `templates/mailbox-AGENTS.md` at the repo root so every harness that pulls
+   the project knows the mailbox is part of the workflow); `main` is
    branch-protected (no direct pushes, no force-push); your sender dir
    `mailbox/<your-identity>/` exists.
 2. **Sync.** `git fetch && git pull --rebase` on your work branch or `main`;

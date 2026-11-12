@@ -1,7 +1,7 @@
 # crosshand
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Version](https://img.shields.io/badge/version-0.4.1-orange)
+![Version](https://img.shields.io/badge/version-0.4.2-orange)
 [![Repo: cheahhl814/crosshand](https://img.shields.io/badge/repo-cheahhl814%2Fcrosshand-black.svg)](https://github.com/cheahhl814/crosshand)
 
 Cross-harness work exchange: hand work between coding-agent harnesses (and
@@ -59,7 +59,8 @@ sweeps only ever process tracked mailbox files.
 - Other harnesses — import the SKILL.md body into your instruction file
   (AGENTS-style), or keep the repo cloned and point your agent at it.
 - Repo-only adoption — repositories that want just the conventions can copy
-  `templates/mailbox-README.md` into their `mailbox/` directory standalone.
+  `templates/mailbox-README.md` into their `mailbox/` directory, and
+  `templates/mailbox-AGENTS.md` to the repo root, standalone.
 
 ## 💡 Usage
 
@@ -79,7 +80,9 @@ receiver : collect mail → verify freshness (facts, base ancestry, remote probe
 auditor  : status sweep → reply-chain check → 30-day compaction into ARCHIVE.md
 ```
 
-Set up a shared repo: copy `templates/mailbox-README.md` into `mailbox/` and
+Set up a shared repo: copy `templates/mailbox-README.md` into `mailbox/`,
+commit `templates/mailbox-AGENTS.md` at the repo root (tracked — every clone
+then tells its harness about the mailbox; never auto-copied at runtime), and
 protect `main` (PRs only, no force-push).
 
 ## 🔬 Workflow overview
