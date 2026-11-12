@@ -47,12 +47,6 @@ sweeps only ever process tracked mailbox files.
 > clone the repo, then either symlink the clone whole into your skills
 > directory (e.g. `ln -sfn <path-to-clone>/<skills-dir>/crosshand`) or copy
 > the repo contents there, and read `SKILL.md` fully before first use.
-> Afterwards, use the skill whenever I say "check the mailbox", "pick up
-> mail", "send peer mail to <colleague's machine>", or ask you to hand
-> work to a harness or colleague on a different machine via a shared git
-> repo.
-> A shared repo adopting the protocol needs only `templates/mailbox-README.md`
-> copied into its `mailbox/` directory.
 
 **Manual:**
 
