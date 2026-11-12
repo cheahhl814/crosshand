@@ -89,7 +89,7 @@ sender machine                          receiver machine
 ─────                                   ─────
 mailbox/<sender>/H-*.md  ──commit+PR──▶  git pull ──▶ collect mail (what is addressed to me?)
         │                                                │
-   @handle mention                        verify freshness (facts + base + ls-remote probe)
+   @handle mention                        verify freshness (facts + base + merge-base probe)
         │                                                │
    human comment thread (PR)          promote gate (human approves asks) ──▶ act locally
         │                                                │
@@ -109,7 +109,8 @@ Statuses: sender-writable `open`, `done`, `superseded`; receiver-writable
 - **`gh` CLI: never required.** PRs, `@handle` mentions, comments, and
   notifications are GitHub-native (web UI or mobile app).
 - **git CLI = harness role only** — the freshness-verification steps
-  (`git ls-remote`, `git log`, `git merge-base --is-ancestor`) are shell
+  (`git fetch`, `git log`, `git diff`, `git merge-base --is-ancestor`) are
+  shell
   commands run by shell-using coding agents. Human colleagues can be fully
   web/app-only.
 - **Browser-only senders** — a human with a GitHub account but no local git
