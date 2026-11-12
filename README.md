@@ -87,17 +87,14 @@ protect `main` (PRs only, no force-push).
 
 ## 🔬 Workflow overview
 
-```text
-sender machine                          receiver machine
-─────                                   ─────
-mailbox/<sender>/H-*.md  ──commit+PR──▶  git pull ──▶ collect mail (what is addressed to me?)
-        │                                                │
-   @handle mention                        verify freshness (facts + base + merge-base probe)
-        │                                                │
-   human comment thread (PR)          promote gate (human approves asks) ──▶ act locally
-        │                                                │
-   reply mailbox/<receiver>/H-*.md + status set
-```
+![Crosshand workflow overview — metro map](assets/workflow-metro-map.svg)
+
+*The exchange as a transit map: every route starts at the sender's compose
+station, the announce PR is where the human lane splits off (@handle mention
+→ PR thread), the receiver lane carries the status chain (acked → done), and
+the dotted spur is the read-only `to: room` broadcast. Full procedures in
+[SKILL.md](SKILL.md); the file contract in
+[mailbox-protocol.md](mailbox-protocol.md).*
 
 Statuses: sender-writable `open`, `done`, `superseded`; receiver-writable
 (one-to-one only) `acked`, `done`. Full file contract:

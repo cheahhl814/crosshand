@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Crosshand workflow metro map: a sender composes and SHA-pins an H-*.md exchange file, commits it and opens an announce PR; the merged mail flows to the receiver who verifies freshness, passes the human promote gate and replies, with human discussion riding the PR thread via @handle and an optional to:room broadcast" width="800" height="450">
+  <rect x="0" y="0" width="800" height="450" fill="#ffffff"/>
+  <title>Crosshand workflow overview</title>
+  <g>
+  <rect x="16" y="70" width="284" height="316" rx="14" style="fill:#f4f5f7;stroke:#e2e8f0;stroke-width:1.5"/>
+  <circle cx="27" cy="53" r="11" style="fill:#0f172a"/>
+  <text x="27" y="57.5" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:13px;font-weight:700;fill:#ffffff">1</text>
+  <text x="46" y="58.5" text-anchor="start" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:16px;font-weight:600;fill:#0f172a">Sender · machine A</text>
+  <rect x="312" y="70" width="268" height="316" rx="14" style="fill:#f4f5f7;stroke:#e2e8f0;stroke-width:1.5"/>
+  <circle cx="323" cy="53" r="11" style="fill:#0f172a"/>
+  <text x="323" y="57.5" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:13px;font-weight:700;fill:#ffffff">2</text>
+  <text x="342" y="58.5" text-anchor="start" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:16px;font-weight:600;fill:#0f172a">Shared mailbox repo</text>
+  <rect x="592" y="70" width="192" height="210" rx="14" style="fill:#f4f5f7;stroke:#e2e8f0;stroke-width:1.5"/>
+  <circle cx="603" cy="53" r="11" style="fill:#0f172a"/>
+  <text x="603" y="57.5" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:13px;font-weight:700;fill:#ffffff">3</text>
+  <text x="622" y="58.5" text-anchor="start" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:16px;font-weight:600;fill:#0f172a">Receiver · machine B</text>
+  </g>
+  <g>
+  <path d="M 274 186 V 322 Q 274 340 292 340 H 474" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 7" style="stroke:#10b981;stroke-width:5"/>
+  </g>
+  <g>
+  <path d="M 76 174 H 130 C 158 174 158 122 186 122 H 194 C 222 122 222 174 250 174 H 330 H 728" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:#0d9488;stroke-width:4"/>
+  <path d="M 130 174 C 158 174 158 226 186 226 H 194 C 222 226 222 174 250 174" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:#0d9488;stroke-width:4"/>
+  <path d="M 76 180 H 130 C 158 180 158 128 186 128 H 194 C 222 128 222 180 250 180 H 330 C 350 180 350 120 372 120 H 516 C 538 120 538 180 560 180 H 728" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:#f59e0b;stroke-width:4"/>
+  <path d="M 130 180 C 158 180 158 232 186 232 H 194 C 222 232 222 180 250 180" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:#f59e0b;stroke-width:4"/>
+  <path d="M 76 186 H 130 C 158 186 158 134 186 134 H 194 C 222 134 222 186 250 186 H 330 C 350 186 350 240 372 240 H 516 C 538 240 538 186 560 186 H 728" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:#ef4444;stroke-width:4"/>
+  <path d="M 130 186 C 158 186 158 238 186 238 H 194 C 222 238 222 186 250 186" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:#ef4444;stroke-width:4"/>
+  </g>
+  <g>
+  <path d="M 30 158 H 52 L 62 168 V 198 H 30 Z" transform="translate(4 5)" style="fill:#0f172a;fill-opacity:0.22;stroke:#0f172a;stroke-opacity:0.45;stroke-width:1.5"/>
+  <path d="M 30 158 H 52 L 62 168 V 198 H 30 Z" stroke-linejoin="round" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <path d="M 52 158 V 168 H 62" fill="none" stroke-linejoin="round" style="stroke:#0f172a;stroke-width:2"/>
+  <rect x="24" y="173" width="44" height="15" rx="3" style="fill:#0f172a"/>
+  <text x="46" y="184.5" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:700;fill:#ffffff">MAIL</text>
+  <rect x="69" y="167" width="6" height="26" rx="1.5" style="fill:#0f172a"/>
+  <rect x="481" y="327" width="6" height="26" rx="1.5" style="fill:#0f172a"/>
+  <path d="M 498 318 H 520 L 530 328 V 358 H 498 Z" transform="translate(4 5)" style="fill:#0f172a;fill-opacity:0.22;stroke:#0f172a;stroke-opacity:0.45;stroke-width:1.5"/>
+  <path d="M 498 318 H 520 L 530 328 V 358 H 498 Z" stroke-linejoin="round" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <path d="M 520 318 V 328 H 530" fill="none" stroke-linejoin="round" style="stroke:#0f172a;stroke-width:2"/>
+  <rect x="492" y="333" width="44" height="15" rx="3" style="fill:#0f172a"/>
+  <text x="514" y="344.5" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:700;fill:#ffffff">ROOM</text>
+  <rect x="725" y="167" width="6" height="26" rx="1.5" style="fill:#0f172a"/>
+  <path d="M 744 160 H 766 L 776 170 V 200 H 744 Z" transform="translate(4 5)" style="fill:#0f172a;fill-opacity:0.22;stroke:#0f172a;stroke-opacity:0.45;stroke-width:1.5"/>
+  <path d="M 744 160 H 766 L 776 170 V 200 H 744 Z" stroke-linejoin="round" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <path d="M 766 160 V 170 H 776" fill="none" stroke-linejoin="round" style="stroke:#0f172a;stroke-width:2"/>
+  <rect x="738" y="175" width="44" height="15" rx="3" style="fill:#0f172a"/>
+  <text x="760" y="186.5" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:700;fill:#ffffff">DONE</text>
+  </g>
+  <g>
+  <rect x="101" y="165" width="10" height="30" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <rect x="185" y="113" width="10" height="30" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <rect x="185" y="217" width="10" height="30" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <rect x="269" y="165" width="10" height="30" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <circle cx="396" cy="174" r="6" style="fill:#ffffff;stroke:#0f172a;stroke-width:2.5"/>
+  <circle cx="396" cy="120" r="6" style="fill:#ffffff;stroke:#0f172a;stroke-width:2.5"/>
+  <circle cx="396" cy="240" r="6" style="fill:#ffffff;stroke:#0f172a;stroke-width:2.5"/>
+  <circle cx="494" cy="174" r="6" style="fill:#ffffff;stroke:#0f172a;stroke-width:2.5"/>
+  <circle cx="494" cy="120" r="6" style="fill:#ffffff;stroke:#0f172a;stroke-width:2.5"/>
+  <circle cx="494" cy="240" r="6" style="fill:#ffffff;stroke:#0f172a;stroke-width:2.5"/>
+  <circle cx="352" cy="340" r="6" style="fill:#ffffff;stroke:#0f172a;stroke-width:2.5"/>
+  <circle cx="424" cy="340" r="6" style="fill:#ffffff;stroke:#0f172a;stroke-width:2.5"/>
+  <rect x="629" y="165" width="10" height="30" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <rect x="679" y="165" width="10" height="30" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  </g>
+  <g>
+  <text x="106" y="155" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">compose H-*.md</text>
+  <text x="190" y="103" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">SHA-pin facts</text>
+  <text x="190" y="265" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">verify push pin</text>
+  <text x="274" y="155" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">commit + PR</text>
+  <text x="396" y="106" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">@handle mention</text>
+  <text x="494" y="106" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">human thread</text>
+  <text x="396" y="164" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">merged main</text>
+  <text x="494" y="164" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">git pull</text>
+  <text x="396" y="263" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">status acked</text>
+  <text x="494" y="263" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">status done</text>
+  <text x="352" y="326" text-anchor="start" transform="rotate(-28 352 326)" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">to: room</text>
+  <text x="424" y="326" text-anchor="start" transform="rotate(-28 424 326)" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">read-only</text>
+  <text x="634" y="155" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">freshness check</text>
+  <text x="684" y="214" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">promote gate</text>
+  <text x="512" y="375" text-anchor="middle" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;fill:#64748b">everyone</text>
+  <text x="760" y="230" text-anchor="middle" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;fill:#64748b">act locally</text>
+  <text x="46" y="222" text-anchor="middle" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;fill:#64748b">new exchange</text>
+  </g>
+  <g>
+  <text x="600" y="312" letter-spacing="1.2" text-anchor="start" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:700;fill:#64748b">ROUTES</text>
+  <path d="M 602 330 H 630" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:#0d9488;stroke-width:4"/>
+  <text x="640" y="334" text-anchor="start" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;fill:#0f172a">harness: merge + pull</text>
+  <path d="M 602 352 H 630" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:#f59e0b;stroke-width:4"/>
+  <text x="640" y="356" text-anchor="start" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;fill:#0f172a">human: @handle + thread</text>
+  <path d="M 602 374 H 630" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:#ef4444;stroke-width:4"/>
+  <text x="640" y="378" text-anchor="start" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;fill:#0f172a">receiver: acked &#8594; done</text>
+  <path d="M 602 396 H 630" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 7" style="stroke:#10b981;stroke-width:5"/>
+  <text x="640" y="400" text-anchor="start" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;fill:#0f172a">optional: to: room broadcast</text>
+  </g>
+</svg>
